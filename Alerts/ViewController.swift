@@ -10,16 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let confirmDeleteFile = Alert<ConfirmOptions>(title: "Delete file", message: "Are you sure?")
+        present(alert: confirmDeleteFile) { (result) in
+            print(result)
+        }
+//        present(alert: CustomAlert.self) { (result) in
+//            print(result)
+//        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-
